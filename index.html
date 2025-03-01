@@ -5,43 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generative Art Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/art-styles.css">
 </head>
 <body>
     <div class="navbar">
         <h1 class="title">Generative Art Gallery</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="./art/art1.html">Art Piece 1</a></li>
+                <li><a href="art/art2.html">Art Piece 2</a></li>
+                <li><a href="art/art3.html">Art Piece 3</a></li>
             </ul>
         </nav>
     </div>
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <!-- Art Piece 1 -->
-            <div class="carousel-item" id="art1">
-                <canvas id="artCanvas1"></canvas>
-            </div>
-            <!-- Art Piece 2 -->
-            <div class="carousel-item" id="art2">
-                <canvas id="artCanvas2"></canvas>
-            </div>
-            <!-- Art Piece 3 -->
-            <div class="carousel-item" id="art3">
-                <canvas id="artCanvas3"></canvas>
-            </div>
-            <!-- Add more art pieces as needed -->
-        </div>
-        <!-- Carousel Controls -->
-        <button class="carousel-control prev" id="prevBtn">‹</button>
-        <button class="carousel-control next" id="nextBtn">›</button>
+    <div class="content">
+        <h2>Welcome to the Generative Art Gallery!</h2>
+        <p>Select an art piece to explore.</p>
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/art1.js"></script>
-    <script src="js/art2.js"></script>
-    <script src="js/art3.js"></script>
 </body>
 </html>
