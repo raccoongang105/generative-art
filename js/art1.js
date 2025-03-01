@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = window.innerHeight;
 
     // Variables for fluid dynamics and color change
-    let t = 0; // Time variable for animation
-    let colorShift = 0; // Variable for controlling color shift via slider
+    let time = 5; // Time variable for animation
+    let colorShift = 10; // Variable for controlling color shift via slider
+
+    // Adjust how fast the noise moves
+    let noiseSpeed = 0.02;
 
     // Use Perlin noise for smooth randomness and calming effects
     function generateNoise(x, y, time) {
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Loop to draw fluid dynamic pattern
         for (let y = -canvas.height / 2; y < canvas.height / 2; y += 10) {
             for (let x = -canvas.width / 2; x < canvas.width / 2; x += 10) {
-                let noise = generateNoise(x, y, t);
+                let noise = generateNoise(x, y, time);
                 
                 // Calming colors, evolving slowly over time, with colorShift applied
                 let colorValue = Math.abs(noise * 255 + colorShift); // Adjust color based on slider
@@ -51,8 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.restore();
 
-        // Increase the time for animation and fluid dynamics
-        t += 0.02;
+        // Gradually change the noise speed or phase to simulate a shift in direction
+        time += noiseSpeed;
+
+        // Change the noiseSpeed value to reverse the flow slowly
+        if (time >= 10) {
+            noiseSpeed = -0.02; // Reverse the direction of noise flow
+        } else if (time <= 5) {
+            noiseSpeed = 0.02; // Reverse back to the original direction
+        }
+
+        // Keep the animation going
         requestAnimationFrame(drawArt);
     }
 
