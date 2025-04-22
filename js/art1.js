@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = window.innerHeight;
 
     // Variables for fluid dynamics and color change
-    let time = 5; // Time variable for animation
+    let time = 0; // Time variable for animation
     let colorShift = 10; // Variable for controlling color shift via slider
 
     // Adjust how fast the noise moves
